@@ -1,0 +1,87 @@
+// bower:scss
+@import "bower_components/font-awesome/scss/font-awesome.scss";
+// endbower
+// TODO
+// Fonts in variables
+// Colors in variables
+body {
+    background: #fafafa;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-unit {
+    margin: 50px auto 0 auto;
+    width: 300px;
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 30px;
+    background-color: #eee;
+    border-radius: 6px;
+    padding: 60px;
+    h1 {
+        font-size: 60px;
+        line-height: 1;
+        letter-spacing: -1px;
+    }
+}
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #fff;
+    padding: 0.2em 0;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    // border: 1px solid blue;
+    width: 40vw;
+    .input-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 40vw;
+        // border: 1px solid blue;
+        .input-text {
+            width: 90%;
+        }
+        .input-button {
+            width: 10%;
+            text-align: center;
+        }
+    }
+    .task-wrapper {
+        width: 40vw;
+        // border: 1px solid blue;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        // align-self: flex-start;
+        // padding-left: 10vw;
+        .tasks {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 36vw;
+            padding: 1vw;
+        }
+        .task-value {
+            // border: 1px solid red;
+            width: 90%;
+        }
+        .task-button {
+            // border: 1px solid red;
+            width: 10%;
+        }
+    }
+}
