@@ -1,3 +1,5 @@
+"use strict";
+
 if (localStorage.getItem('tasks') !== null) {
     var taskList = localStorage.getItem('tasks');
     if (taskList.length > 0) {
@@ -5,6 +7,8 @@ if (localStorage.getItem('tasks') !== null) {
     } else {
         taskList = {};
     }
+} else {
+    var taskList = {};
 }
 
 let getTask = function() {
@@ -26,8 +30,11 @@ let removeTask = function(e) {
     removeThisTask.className += ' animated';
     removeThisTask.className += ' fadeOutRight';
     delete taskList[removeThisTask.id];
+    console.log(taskList);
     localStorage.setItem('tasks', JSON.stringify(taskList));
-    setTimeout(function() { tasks.removeChild(removeThisTask) }, 1000);
+    setTimeout(function() {
+        tasks.removeChild(removeThisTask);
+    }, 1000);
 }
 
 let createInnerTaskDiv = function(text, uniqueID) {
@@ -78,6 +85,15 @@ let enterTrigger = function(e) {
         addTask();
     }
 }
+
+let today = document.querySelector('.date');
+let now = document.querySelector('.time');
+
+
+ today.innerText = moment().format('LL');
+
+ setInterval("now.innerText = moment().format('LTS')", 1000);
+
 
 let addButton = document.querySelector('.input-button');
 addButton.addEventListener('click', addTask);

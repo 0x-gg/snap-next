@@ -5,12 +5,13 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TO-DO</title>
+    <title>DO-TO-DO</title>
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="/bower_components/animate.css/animate.css" />
+    <link rel="stylesheet" href="/bower_components/reset-css/reset.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css styles/main.css -->
@@ -34,9 +35,14 @@
             <li>jQuery</li>
         </ul>
     </div> -->
+    <div class="header">DO-TO-DO</div>
     <div class="main-wrapper">
+        <div class="welcome">Welcome!
+            <br>Today is <span class="date"></span>.
+            <br> The time is <span class="time"></span>.
+            <br>Note your top priority tasks here and go <a href="https://youtu.be/I33u_EHLI3w" target="_blank"><button class="win">WIN</button></a> the day!</div>
         <div class="input-wrapper">
-            <input class="input-text" type="text" name="todo">
+            <input class="input-text" type="text" name="todo" placeholder="What do you want to do?">
             <div class="input-button"><i class="fa fa-plus" aria-hidden="true"></i></div>
         </div>
         <div class="task-wrapper">
@@ -66,6 +72,7 @@
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/moment/moment.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js scripts/main.js -->

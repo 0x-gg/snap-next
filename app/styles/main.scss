@@ -1,40 +1,39 @@
 // bower:scss
 @import "bower_components/font-awesome/scss/font-awesome.scss";
+@import "bower_components/reset-css/_reset.scss";
 // endbower
 // TODO
 // Fonts in variables
 // Colors in variables
+@charset "UTF-8";
+@import url("//hello.myfonts.net/count/27167b");
+@import url("//hello.myfonts.net/count/27167f");
+@import url("//fonts.googleapis.com/css?family=Montserrat");
+$head-size: 4rem;
+$text-size: 1.5rem;
+$snap-blue: #00526E;
 body {
-    background: #fafafa;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: #333;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.hero-unit {
-    margin: 50px auto 0 auto;
-    width: 300px;
-    font-size: 20px;
-    font-weight: 200;
-    line-height: 30px;
-    background-color: #eee;
-    border-radius: 6px;
-    padding: 60px;
-    h1 {
-        font-size: 60px;
-        line-height: 1;
-        letter-spacing: -1px;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    a {
+        color: rgba(152, 198, 12, 1);
+        text-decoration: none;
     }
 }
 
-.browserupgrade {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #fff;
-    padding: 0.2em 0;
+.header {
+    font-size: $head-size;
+    color: #FFFFFF;
+    background-color: #00526E;
+    width: 100vw;
+    max-width: 100%;
+    padding: 2rem;
+    text-align: center;
+    font-weight: bold;
 }
 
 .main-wrapper {
@@ -43,20 +42,71 @@ body {
     align-items: center;
     justify-content: center;
     // border: 1px solid blue;
-    width: 40vw;
+    color: $snap-blue;
+    width: 50vw;
+    .win {
+        background-color: rgba(152, 198, 12, 1);
+        color: #FFF;
+        position: relative;
+        display: inline-block;
+        font-weight: bold;
+        margin-bottom: 4px;
+        line-height: 1.4;
+        text-transform: uppercase;
+        text-decoration: none !important;
+        text-shadow: transparent 0 0 1px;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        border: 1px solid #bfbfbf;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+        font-size: $text-size;
+        &:hover {
+            transform: translateY(-2px);
+            outline: 0;
+            text-decoration: underline;
+        }
+    }
+    .welcome {
+        // padding-top: 2rem;
+        text-align: center;
+        font-size: $text-size;
+        align-self: flex-start;
+        padding: 2rem;
+        line-height: 2rem;
+    }
     .input-wrapper {
+        // padding-top: 2rem;
         display: flex;
         flex-direction: row;
         justify-content: center;
+        align-items: center;
         width: 40vw;
         // border: 1px solid blue;
         .input-text {
+            color: $snap-blue;
+            border: 2px solid #dadada;
+            border-radius: 4px;
+            font-size: $text-size;
+            padding: 0.5rem 1rem 0.5rem 1rem;
             width: 90%;
+            box-shadow: inset 0 1px 3px rgba(51, 208, 255, 0.3);
+        }
+        .input-text:focus {
+            outline: none;
+            border-color: rgba(51, 208, 255, 0.5);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
         }
         .input-button {
-            width: 10%;
+            width: 5rem;
+            font-size: 2.5rem;
             text-align: center;
+            // vertical-align: middle;
         }
+        padding-bottom: 1rem;
     }
     .task-wrapper {
         width: 40vw;
@@ -72,16 +122,83 @@ body {
             display: flex;
             flex-direction: row;
             justify-content: center;
+            align-items: center;
+            font-size: $text-size;
             width: 36vw;
             padding: 1vw;
+            .task-value {
+                // border: 1px solid red;
+                width: 90%;
+            }
+            .task-button {
+                // border: 1px solid red;
+                width: 10%;
+            }
         }
-        .task-value {
-            // border: 1px solid red;
-            width: 90%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .header {
+        font-size: 3rem;
+        color: #FFFFFF;
+        background-color: #00526E;
+        width: 100vw;
+        max-width: 100%;
+        padding: 1.2rem;
+        text-align: center;
+        font-weight: bold;
+    }
+    .main-wrapper {
+        width: 100vw;
+        .welcome {
+            padding: 1rem;
+            font-size: 1rem;
         }
-        .task-button {
+        .win {
+            font-size: 1rem;
+        }
+        .input-wrapper {
+            align-items: center;
+            min-width: 95vw;
+            padding-left: 2.5vw;
+            .input-text {
+                font-size: 1.1rem;
+            }
+            .input-button {
+                font-size: 1.5rem;
+            }
+        }
+    }
+    .task-wrapper {
+        min-width: 95vw;
+        // border: 1px solid blue;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        // flex-wrap: wrap;
+        justify-content: flex-start;
+        align-self: flex-start;
+        padding-left: 2.5vw;
+        .tasks {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
             // border: 1px solid red;
-            width: 10%;
+            min-width: 90vw;
+            height: 5vh;
+            .task-value {
+                font-size: 1.1rem;
+                // border: 1px solid red;
+                width: 90%;
+                word-break: break-all;
+            }
+            .task-button {
+                // border: 1px solid red;
+                width: 10%;
+                font-size: 1.5rem;
+            }
         }
     }
 }
