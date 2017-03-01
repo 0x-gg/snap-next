@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 if (localStorage.getItem('tasks') !== null) {
     var taskList = localStorage.getItem('tasks');
@@ -92,7 +92,7 @@ let now = document.querySelector('.time');
 
  today.innerText = moment().format('LL');
 
- setInterval("now.innerText = moment().format('LTS')", 1000);
+ setInterval('now.innerText = moment().format(\'LTS\')', 1000);
 
 
 let addButton = document.querySelector('.input-button');
